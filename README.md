@@ -59,3 +59,25 @@ Display customer's available rewards
 
 -  Invalid account number exception The supplied account number is invalid Return no rewards and notify the client that the account number is invalid
 
+
+## === Install and run ===
+
+-  bundle exec install
+-  rackup
+
+## === Sample input/output ===
+
+
+-  input: ####  localhost:9292/available_rewards?account_nr=ab12&subscriptions[]=SPORTS  ###
+
+    output: `{"available_rewards":["CHAMPIONS_LEAGUE_FINAL_TICKET"],"error":false}`
+
+-  input: ####  localhost:9292/available_rewards?account_nr=ab12&subscriptions[]=KIDS  ###
+
+     output: `{"available_rewards":[],"error":false}`
+
+-  input: ####  localhost:9292/available_rewards?account_nr=ab12&subscriptions[]=SPORTS&&subscriptions[]=MUSIC  ###
+
+    output #for multi rewards: `{"available_rewards":["CHAMPIONS_LEAGUE_FINAL_TICKET","KARAOKE_PRO_MICROPHONE"],"error":false}`
+
+ ===

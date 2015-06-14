@@ -1,0 +1,2 @@
+class InvalidAccountNumber < Exception
+end
